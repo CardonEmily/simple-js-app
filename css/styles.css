@@ -1,9 +1,6 @@
 /* font-family: 'Catamaran', sans-serif;
 font-family: 'DM Serif Display', serif; */
 
-* {
-    box-sizing: border-box;
-}
 
 body{
     background-color: #FFF0D5;
@@ -13,4 +10,10 @@ body{
     text-align: center;
     line-height: 1.5;
     margin: 5%;
+}
+
+h1{
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: #977435;
 }
