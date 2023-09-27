@@ -30,3 +30,14 @@ let pokemonList = [
     abilities: ['Syncronize', 'Trace', 'Telepathy']
 }
 ]
+
+for (let i = 0; i < pokemonList.length; i++){
+
+    if (pokemonList[i].height > 1.9) { //setting minimun height for Pokemon to be considered big.
+     document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) Wow, that\'s a big one!<br>');
+    }
+
+    else if (pokemonList[i].height < 1.9 && pokemonList[i].height > 1) { //setting average size regulations.
+     document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) That seems to be an average Pokemon.<br>');
+    }
+}
