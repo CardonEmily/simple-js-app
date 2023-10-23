@@ -2,7 +2,7 @@ let pokemonList = [
 
     {name: 'Ninetales',
     height: 1.1,
-    types: ['Fire'],
+    type: ['Fire'],
     abilities: ['Flash-Fire', 'Drought']
     },
 
@@ -31,10 +31,14 @@ let pokemonList = [
 }
 ]
 
-for (let i = 0; i < pokemonList.length; i++){
-    if (pokemonList[i].height > 1.9) { //setting minimum height for Pokemon to be considered big.
-     document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) Wow, that\'s a big one!<br>');
-    } else if (pokemonList[i].height < 1.9 && pokemonList[i].height > 1) { //setting average size regulations.
-     document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) That seems to be an average Pokemon.<br>');
-    }
-}
+// for (let i = 0; i < pokemonList.length; i++){
+//     if (pokemonList[i].height > 1.9) { //setting minimum height for Pokemon to be considered big.
+//      document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) Wow, that\'s a big one!<br>');
+//     } else if (pokemonList[i].height < 1.9 && pokemonList[i].height > 1) { //setting average size regulations.
+//      document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) That seems to be an average Pokemon.<br>');
+//     }
+// }
+// userList.forEach(function(user) {
+//   console.log(user.name + ' is ' + user.age + ' years old.');
+// });
+pokemonList.forEach( pokemon => document.write(pokemon.name + ' \(' + pokemon.type + '\),' + ' has a height of ' + pokemon.height + 'm. <br> '))
