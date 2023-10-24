@@ -43,33 +43,31 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
   return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem,
   };
 })();
 
 console.log(pokemonRepository.getAll());
+
 pokemonRepository.add({ name: "Pikachu" });
 
-pokemonRepository
-  .getAll()
-  .forEach((pokemon) =>
-    document.write(
-      pokemon.name +
-        " (" +
-        pokemon.type +
-        ")," +
-        " has a height of " +
-        pokemon.height +
-        "m. <br> "
-    )
-  );
-
-// for (let i = 0; i < pokemonList.length; i++){
-//     if (pokemonList[i].height > 1.9) { //setting minimum height for Pokemon to be considered big.
-//      document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) Wow, that\'s a big one!<br>');
-//     } else if (pokemonList[i].height < 1.9 && pokemonList[i].height > 1) { //setting average size regulations.
-//      document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm) That seems to be an average Pokemon.<br>');
-//     }
-// }
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
