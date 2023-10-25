@@ -1,7 +1,7 @@
 # simple-js-app
 
 ##/Project description
-Creating a pokedex of my top five pokemon.
+Creating a pokedex of pokemon.
 
 ##How to get the project running
 
