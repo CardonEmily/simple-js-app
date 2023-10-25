@@ -35,9 +35,20 @@ let pokemonRepository = (function () {
     button.addEventListener("click", () => showDetails(pokemon));
   }
 
+  //   function showLoadingMessage() {
+  //     document.getElementById("loading-message").style.display = block;
+  //   }
+
+  //   function hideLoadingMessage() {
+  //     document.getElementById("loading-message").style.display = "none";
+  //   }
+
   function loadList() {
+    // showLoadingMessage();
+
     return fetch(apiURL)
       .then(function (response) {
+        // hideLoadingMessage();
         return response.json();
       })
       .then(function (json) {
@@ -51,14 +62,18 @@ let pokemonRepository = (function () {
         });
       })
       .catch(function (e) {
+        // hideLoadingMessage();
         console.error(e);
       });
   }
 
   function loadDetails(item) {
+    // showLoadingMessage();
+
     let url = item.detailsURL;
     return fetch(url)
       .then(function (response) {
+        // hideLoadingMessage();
         return response.json();
       })
       .then(function (details) {
@@ -67,6 +82,7 @@ let pokemonRepository = (function () {
         item.types = details.types;
       })
       .catch(function (e) {
+        // hideLoadingMessage();
         console.error(e);
       });
   }
