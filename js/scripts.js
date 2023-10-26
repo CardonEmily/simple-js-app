@@ -35,20 +35,23 @@ let pokemonRepository = (function () {
     button.addEventListener("click", () => showDetails(pokemon));
   }
 
-  //   function showLoadingMessage() {
-  //     document.getElementById("loading-message").style.display = block;
-  //   }
+  function showLoadingMessage() {
+    const loadingMessage = document.querySelector("#load-message");
+    loadingMessage.className = "display";
+  }
 
-  //   function hideLoadingMessage() {
-  //     document.getElementById("loading-message").style.display = "none";
-  //   }
+  function hideLoadingMessage() {
+    const loadingMessage = document.querySelector("#load-message");
+    loadingMessage.className = "do-not-display";
+  }
 
   function loadList() {
-    // showLoadingMessage();
-
+    showLoadingMessage(); //show load message
     return fetch(apiURL)
       .then(function (response) {
-        // hideLoadingMessage();
+        setTimeout(() => {
+          hideLoadingMessage(); //hide load message
+        }, 500);
         return response.json();
       })
       .then(function (json) {
@@ -58,22 +61,22 @@ let pokemonRepository = (function () {
             detailsURL: item.url,
           };
           add(pokemon);
-          console.log(pokemon);
         });
       })
       .catch(function (e) {
-        // hideLoadingMessage();
+        hideLoadingMessage(); //hide load message in case of an error
         console.error(e);
       });
   }
 
   function loadDetails(item) {
-    // showLoadingMessage();
-
+    showLoadingMessage(); //show load message
     let url = item.detailsURL;
     return fetch(url)
       .then(function (response) {
-        // hideLoadingMessage();
+        setTimeout(() => {
+          hideLoadingMessage(); //hide load message
+        }, 500);
         return response.json();
       })
       .then(function (details) {
@@ -82,7 +85,7 @@ let pokemonRepository = (function () {
         item.types = details.types;
       })
       .catch(function (e) {
-        // hideLoadingMessage();
+        hideLoadingMessage(); //hide load message in case of an error
         console.error(e);
       });
   }
