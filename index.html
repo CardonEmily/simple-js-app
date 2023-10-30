@@ -22,10 +22,23 @@
   </head>
   <body>
     <h1>Pokemon Repository</h1>
+    <ul class="pokemon-list"></ul>
+    <!-- modal and button -->
+    <div id="modal-container">
+      <div class="modal-content">
+        <h1 class="modal-title" id="modal-label">Modal title</h1>
+        <button id="show-modal">Show Modal</button>
+        <div class="modal">
+          <button class="close">Close</button>
+          <div class="modal-body"><p></p></div>
+        </div>
+      </div>
+    </div>
+    <div id="img-container"></div>
+    <!-- loading message -->
     <div class="do-not-display" id="load-message">
       Please hold while we catch your pokemon.
     </div>
-    <ul class="pokemon-list"></ul>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-pollyfill.js"></script>
     <script src="js/scripts.js"></script>
