@@ -63,6 +63,7 @@ const pokemonRepository = (function () {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
+        item.abilities = details.abilities;
       })
       .catch(function (e) {
         hideLoadingMessage(); //hide load message in case of an error
@@ -71,10 +72,8 @@ const pokemonRepository = (function () {
   }
 
   function showModal(pokemon) {
-    // Clear all existing modal content
+    const modalContainer = document.querySelector("#modal-container");
     modalContainer.innerHTML = "";
-    const modalBody = document.querySelector(".modal-body");
-    const modalTitle = document.querySelector(".modal-Title");
 
     const modal = document.createElement("div");
     modal.classList.add("modal");
@@ -84,20 +83,20 @@ const pokemonRepository = (function () {
     closeButtonElement.innerText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
 
-    const titleElement = document.createElement("h1");
-    titleElement.innerText = "Pokemon Name" + ": " + pokemon.name;
+    const titleElement = document.createElement("h2");
+    titleElement.innerText = "Pokemon" + ": " + pokemon.name;
 
     const contentElement = document.createElement("p");
-    contentElement.innerText = "Pokemon height" + ": " + pokemon.height;
+    contentElement.innerText = "Pokemon height" + ": " + pokemon.height + "m.";
 
     const container = document.querySelector("#img-container");
     const myImage = document.createElement("img");
     myImage.src = pokemon.imageUrl;
-    modalBody.appendChild(myImage);
 
-    modalTitle.appendChild(closeButtonElement);
-    modalBody.appendChild(titleElement);
-    modalBody.appendChild(contentElement);
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(myImage);
+    modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add("is-visible");
@@ -124,7 +123,7 @@ const pokemonRepository = (function () {
   });
 
   document.querySelector("#show-modal").addEventListener("click", () => {
-    showModal("title", "Pokemon Stats");
+    showModal("title", "text");
   });
 
   function add(pokemon) {
