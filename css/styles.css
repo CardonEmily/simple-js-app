@@ -17,6 +17,20 @@ h1{
     font-style: italic;
     color: #977435;
     text-align: center;
+    font-weight: 600;
+}
+
+h2 {
+    font-family: 'DM Serif Display', serif;
+    font-style: none;
+    color: #977435;
+    text-align: center;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
 }
 
 .button-class {
@@ -27,7 +41,7 @@ h1{
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
     border: 2px solid #977435;
@@ -95,8 +109,13 @@ li {
     text-decoration: underline;
   }
 
-  .modal h1 {
+  .modal h2 {
     margin-top: 0;
+    font-family: 'DM Serif Display', serif;
+    font-style: none;
+    color: #977435;
+    text-align: center;
+    font-weight: 500;
   }
 
   .modal p {
@@ -125,4 +144,8 @@ li {
 
     display: grid;
     text-align: center;
+  }
+
+  img {
+    align-items: center;
   }
