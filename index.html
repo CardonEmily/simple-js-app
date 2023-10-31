@@ -24,17 +24,21 @@
     <h1>Pokemon Repository</h1>
     <ul class="pokemon-list"></ul>
     <!-- modal and button -->
-    <div id="modal-container">
-      <div class="modal-content">
-        <h1 class="modal-title" id="modal-label">Modal title</h1>
-        <button id="show-modal">Show Modal</button>
+    <div id="modal-container" class="modal-fade">
+      <div class="modal-title">
+        <button id="show-modal">show</button>
         <div class="modal">
-          <button class="close">Close</button>
-          <div class="modal-body"><p></p></div>
+          <h2 class="pokemon-name"></h2>
+          <h3 classe="pokemon-type"></h3>
+          <div class="modal-body">
+            <p class="pokemon-info"></p>
+            <p class="pokemon-ability"></p>
+            <div id="img-container"></div>
+          </div>
         </div>
       </div>
     </div>
-    <div id="img-container"></div>
+
     <!-- loading message -->
     <div class="do-not-display" id="load-message">
       Please hold while we catch your pokemon.
