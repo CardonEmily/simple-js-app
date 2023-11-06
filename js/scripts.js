@@ -1,7 +1,6 @@
 const pokemonRepository = (function () {
   const pokemonList = [];
   const apiURL = "https://pokeapi.co/api/v2/pokemon/?limit=150";
-  const modalContainer = document.querySelector("#modal-container");
 
   function addListItem(pokemon) {
     const pokemonList = document.querySelector(".pokemon-list");
@@ -89,7 +88,6 @@ const pokemonRepository = (function () {
     const contentElement = document.createElement("p");
     contentElement.innerText = "Pokemon height" + ": " + pokemon.height + "m.";
 
-    const container = document.querySelector("#img-container");
     const myImage = document.createElement("img");
     myImage.src = pokemon.imageUrl;
 
