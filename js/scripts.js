@@ -36,7 +36,7 @@ const pokemonRepository = (function () {
   }
 
   function showSearchBar() {
-    const searchBar = $("searchBar");
+    const searchBar = $(".searchBar");
     searchBar.on("keyup", function () {
       const searchString = target.value;
       const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -66,8 +66,8 @@ const pokemonRepository = (function () {
     modalBody.empty();
 
     const nameElement = $("<h1 class='modal-title'>" + pokemon.name + "</h1>");
-    const heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
-    const weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
+    const heightElement = $("<p>" + "height : " + pokemon.height + " m </p>");
+    const weightElement = $("<p>" + "weight : " + pokemon.weight + " kg </p>");
     const typesElement = $(
       "<p>" + "types : " + pokemon.types.join(", ") + "</p>"
     );
