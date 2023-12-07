@@ -38,7 +38,8 @@ h1{
 }
 
 .list-group-item {
-  background-color:var(--primary-color);
+  background-color:var(--accent-color);
+  border: 0px;
 }
 .btn-default {
   background-color: var(--primary-color);
