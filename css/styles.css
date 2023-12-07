@@ -4,7 +4,7 @@ font-family: 'DM Serif Display', serif; */
 :root {
   --primary-color: #dcdcdc;
   --secondary-color: rgb(53, 53, 53);
-  --tertiary-color: yellow;
+  --tertiary-color: rgb(217, 217, 217);
   --accent-color: #CB1006;
   --text-align: center;
   --modal-background: white;
@@ -41,6 +41,11 @@ h1{
   background-color:var(--accent-color);
   border: 0px;
 }
+
+.btn {
+  background-color: var(--primary-color);
+}
+
 .btn-default {
   background-color: var(--primary-color);
   border: none;
@@ -72,6 +77,10 @@ h1{
   width: 50%;
   background-color: var(--secondary-color);
 
+}
+
+#pokedex {
+  padding: 3%;
 }
 
 /* Loading Message Styling */
