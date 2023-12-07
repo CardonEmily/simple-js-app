@@ -19,6 +19,7 @@ body{
     text-align: center;
     line-height: 1.5;
     margin: 5%;
+    text-transform: capitalize;
 }
 
 h1{
@@ -29,14 +30,6 @@ h1{
     font-weight: 600;
 }
 
-h2 {
-    font-family: 'DM Serif Display', serif;
-    font-style: none;
-    color: var(--secondary-color);
-    text-align: center;
-    font-weight: 500;
-}
-
 .pokemon-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -45,7 +38,7 @@ h2 {
 }
 
 .list-group-item {
-  background-color: black;
+  background-color:var(--primary-color);
 }
 .btn-default {
   background-color: var(--primary-color);
@@ -117,12 +110,11 @@ h2 {
     box-sizing: border-box;
     color: var(--Secondary-color);
     background: whitesmoke;
-    padding: 13px;
+    padding: 10px;
     width: 100%;
     max-width: 700px;
     text-align: center;
-    justify-content: center;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .modal-title {
@@ -131,3 +123,27 @@ h2 {
     text-align: center;
   }
 
+  .navbar {
+    margin-bottom: 4%;
+  }
+
+  @media all and (max-width: 500px) {
+    .list-group {
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media all and (min-width: 500px) and (max-width: 750px) {
+    .list-group {
+      -ms-grid-columns: 1fr 20px 1fr;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+  }
+
+  @media all and (max-width: 750px) {
+    .list-group {
+      grid-gap: 10px;
+    }
+  }
