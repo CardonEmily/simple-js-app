@@ -35,17 +35,6 @@ const pokemonRepository = (function () {
     });
   }
 
-  function showSearchBar() {
-    const searchBar = $(".searchBar");
-    searchBar.on("keyup", function () {
-      const searchString = target.value;
-      const filteredPokemon = pokemonList.filter((pokemon) => {
-        return pokemon.name.includes(searchString);
-      });
-      displayPokemon(filteredPokemon);
-    });
-  }
-
   function showLoadingMessage() {
     const loadingMessage = document.querySelector("#load-message");
     loadingMessage.className = "display";
